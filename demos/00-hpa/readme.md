@@ -1,7 +1,11 @@
 A bit from kubernetes.io
 
 ```
-kubectl run php-apache --image=k8s.gcr.io/hpa-example --requests=cpu=200m --expose --port=80
+kubectx AKS
+
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+kubectl apply -f https://k8s.io/examples/application/php-apache.yaml
+
 ```
 
 ```
@@ -21,7 +25,7 @@ while true; do wget -q -O- http://php-apache.default.svc.cluster.local; done
 
 On Left:
 ```
-kubectl get hpa
+kubectl get hpa -w
 ```
 
 Target should be above 50%
