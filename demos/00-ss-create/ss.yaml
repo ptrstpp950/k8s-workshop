@@ -31,6 +31,6 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: dumpster-ss-pod-container
-        image: gutek/dumpser:v1
+        image: gutek/dumpster:v1
         ports:
         - containerPort: 80
